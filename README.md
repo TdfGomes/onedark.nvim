@@ -40,33 +40,6 @@
 <img width="412" alt="Onedark - warmer" src="https://user-images.githubusercontent.com/20145075/144304700-1e333a12-6994-4fb2-9053-1e7f294d41a6.png">
 </div></p>
 
-## Installation
-Install via your favourite package manager
-```vim
-" Using Vim-Plug
-Plug 'TdfGomes/onedark.nvim'
-```
-
-```lua
--- Using Packer
-use 'TdfGomes/onedark.nvim'
-```
-<<<<<<< HEAD
-
-## Configuration
-
-### Enable theme
-
-```lua
--- Lua
-require('onedark').load()
-=======
-Install manually
-```bash
-git clone https://github.com/TdfGomes/onedark.nvim ~/.config/nvim
-nvim +PackerSync
->>>>>>> 6b6de2a (chore: update README)
-```
 
 ```vim
 " Vim
