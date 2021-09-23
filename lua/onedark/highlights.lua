@@ -26,6 +26,7 @@ local colors = {
     Orange = {fg = c.orange},
     Green = {fg = c.green},
     Blue = {fg = c.blue},
+    BGBlue = {fg = c.bg_blue},
     Purple = {fg = c.purple}
 }
 hl.common = {
