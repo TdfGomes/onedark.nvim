@@ -44,13 +44,14 @@
 Install via your favourite package manager
 ```vim
 " Using Vim-Plug
-Plug 'navarasu/onedark.nvim'
+Plug 'TdfGomes/onedark.nvim'
 ```
 
 ```lua
 -- Using Packer
-use 'navarasu/onedark.nvim'
+use 'TdfGomes/onedark.nvim'
 ```
+<<<<<<< HEAD
 
 ## Configuration
 
@@ -59,6 +60,12 @@ use 'navarasu/onedark.nvim'
 ```lua
 -- Lua
 require('onedark').load()
+=======
+Install manually
+```bash
+git clone https://github.com/TdfGomes/onedark.nvim ~/.config/nvim
+nvim +PackerSync
+>>>>>>> 6b6de2a (chore: update README)
 ```
 
 ```vim
