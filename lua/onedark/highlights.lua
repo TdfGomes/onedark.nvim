@@ -23,6 +23,7 @@ local colors = {
     Cyan = {fg = c.cyan},
     Yellow = {fg = c.yellow},
     DarkYellow = {fg = c.dark_yellow},
+    BGYellow = {fg = c.bg_yellow},
     Orange = {fg = c.orange},
     Green = {fg = c.green},
     Blue = {fg = c.blue},
@@ -516,7 +517,7 @@ hl.plugins.nvim_tree = {
     NvimTreeIndentMarker = colors.Fg,
     NvimTreeImageFile = { fg = c.dark_purple },
     NvimTreeSymlink = colors.Purple,
-    NvimTreeFolderName = colors.Blue,
+    NvimTreeFolderName= colors.Fg
 }
 hl.plugins.telescope = {
     TelescopeBorder = colors.Red,
@@ -663,6 +664,26 @@ hl.langs.cpp = {
     cppTSConstant = colors.Cyan,
     cppTSConstMacro = colors.Purple,
     cppTSOperator = colors.Purple,
+}
+
+hl.langs.javascript = {
+    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    javascriptTSPunctBracket = {fg = c.fg, bold = true},
+    javascriptTSConstant = colors.Orange,
+    --javascriptTSVariable = colors.BGYellow,
+}
+
+hl.langs.typescript = {
+    tsxTSType = colors.Orange,
+    typescriptTSType = colors.Orange,
+    --tsxTSVariable = colors.BGYellow,
+    --typescriptTSVariable = colors.BGYellow,
+    typescriptTSConstant = colors.Orange,
+    tsxTSConstant = colors.Orange,
+    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    tsxTSPunctBracket = {fg = c.fg, bold = true},
+    typescriptTSPunctBracket = {fg = c.fg, bold = true},
 }
 
 hl.langs.markdown = {
