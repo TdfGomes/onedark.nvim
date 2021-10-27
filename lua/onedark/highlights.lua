@@ -134,6 +134,7 @@ hl.syntax = {
     Todo = {fg = c.red, fmt = cfg.code_style.comments}
 }
 
+<<<<<<< HEAD
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     hl.treesitter = {
         -- nvim-treesitter@0.9.2 and after
@@ -324,6 +325,70 @@ else
         TSVariableBuiltin = {fg = c.red, fmt = cfg.code_style.variables},
     }
 end
+=======
+hl.treesitter = {
+    TSAnnotation = colors.Fg,
+    TSAttribute = colors.Cyan,
+    TSBoolean = colors.Orange,
+    TSCharacter = colors.Orange,
+    TSComment = {fg = c.grey, italic = cfg.italic_comment},
+    TSConditional = colors.Purple,
+    TSConstant = colors.Cyan,
+    TSConstBuiltin = colors.Orange,
+    TSConstMacro = colors.Red,
+    TSConstructor = {fg = c.yellow, bold = true},
+    TSError = colors.Fg,
+    TSException = colors.Purple,
+    TSField = colors.Cyan,
+    TSFloat = colors.Orange,
+    TSFunction = colors.BGBlue,
+    TSFuncBuiltin = colors.Cyan,
+    TSFuncMacro = colors.Fg,
+    TSInclude = {fg = c.purple, italic = cfg.italic_comment},
+    TSKeyword = {fg = c.purple, italic = cfg.italic_comment},
+    TSKeywordFunction = {fg = c.purple, bold = true},
+    TSKeywordOperator = colors.Purple,
+    TSLabel = colors.Red,
+    TSMethod = colors.Blue,
+    TSNamespace = colors.Yellow,
+    TSNone = colors.Fg,
+    TSNumber = colors.Orange,
+    TSOperator = colors.Purple,
+    TSParameter = colors.Red,
+    TSParameterReference = colors.Fg,
+    TSProperty = colors.Cyan,
+    TSPunctDelimiter = colors.LightGrey,
+    TSPunctBracket = colors.LightGrey,
+    TSPunctSpecial = colors.LightGrey,
+    TSRepeat = colors.Purple,
+    TSString = colors.Green,
+    TSStringRegex = colors.Orange,
+    TSStringEscape = colors.Red,
+    TSSymbol = colors.Cyan,
+    TSTag = colors.Red,
+    TSTagDelimiter = colors.Red,
+    TSTagAttribute= colors.Orange,
+    TSText = colors.Fg,
+    TSStrong = colors.Fg,
+    TSEmphasis = colors.Fg,
+    TSUnderline = colors.Fg,
+    TSStrike = colors.Fg,
+    TSTitle = colors.Fg,
+    TSLiteral = colors.Green,
+    TSURI = colors.Fg,
+    TSMath = colors.Fg,
+    TSTextReference = colors.Fg,
+    TSEnviroment = colors.Fg,
+    TSEnviromentName = colors.Fg,
+    TSNote = colors.Fg,
+    TSWarning = colors.Fg,
+    TSDanger = colors.Fg,
+    TSType = colors.Orange,
+    TSTypeBuiltin = colors.Orange,
+    TSVariable = colors.Fg,
+    TSVariableBuiltin = colors.Red
+}
+>>>>>>> 18a49ab (Minor improvements)
 
 local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
 local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple or c.purple
@@ -525,8 +590,13 @@ hl.plugins.telescope = {
     TelescopePromptBorder = colors.Cyan,
     TelescopeResultsBorder = colors.Cyan,
     TelescopePreviewBorder = colors.Cyan,
+<<<<<<< HEAD
     TelescopeMatching = { fg = c.orange, fmt = "bold" },
     TelescopePromptPrefix = colors.Green,
+=======
+    TelescopeMatching = { fg = c.yellow, bold = true },
+    TelescopePromptPrefix = colors.Blue,
+>>>>>>> 18a49ab (Minor improvements)
     TelescopeSelection =  { bg =c.bg2 },
     TelescopeSelectionCaret = colors.Yellow
 }
@@ -724,6 +794,10 @@ hl.langs.typescript = {
     typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
     tsxTSPunctBracket = {fg = c.fg, bold = true},
     typescriptTSPunctBracket = {fg = c.fg, bold = true},
+}
+
+hl.plugins.symbols_outline = {
+    FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
 }
 
 hl.langs.markdown = {
