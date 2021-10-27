@@ -686,6 +686,10 @@ hl.langs.typescript = {
     typescriptTSPunctBracket = {fg = c.fg, bold = true},
 }
 
+hl.plugins.symbols_outline = {
+    FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
+}
+
 hl.langs.markdown = {
     markdownBlockquote = colors.Grey,
     markdownBold = {fg = c.none, fmt = "bold"},
