@@ -519,6 +519,7 @@ hl.plugins.nvim_tree = {
     NvimTreeSymlink = colors.Purple,
     NvimTreeFolderName= colors.Fg
 }
+
 hl.plugins.telescope = {
     TelescopeBorder = colors.Red,
     TelescopePromptBorder = colors.Cyan,
@@ -688,6 +689,22 @@ hl.langs.typescript = {
 
 hl.plugins.symbols_outline = {
     FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
+}
+
+hl.langs.c = {
+    cInclude = colors.Blue,
+    cStorageClass = colors.Purple,
+    cTypedef = colors.Purple,
+    cDefine = colors.Cyan,
+    cTSInclude = colors.Blue,
+    cTSConstant = colors.Cyan,
+    cTSConstMacro = colors.Purple,
+}
+
+hl.langs.cpp = {
+    cppTSInclude = colors.Blue,
+    cppTSConstant = colors.Cyan,
+    cppTSConstMacro = colors.Purple,
 }
 
 hl.langs.markdown = {
