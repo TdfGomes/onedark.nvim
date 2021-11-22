@@ -30,6 +30,7 @@ local colors = {
     BGBlue = {fg = c.bg_blue},
     Purple = {fg = c.purple}
 }
+
 hl.common = {
     Normal = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
     Terminal = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
