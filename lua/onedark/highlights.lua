@@ -704,8 +704,8 @@ hl.langs.c = {
 hl.langs.cpp = {
     cppTSInclude = colors.Blue,
     cppTSConstant = colors.Cyan,
-    cppTSConstMacro = colors.Purple,
-}
+      cppTSConstMacro = colors.Purple,
+  }
 
 hl.langs.javascript = {
     javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
