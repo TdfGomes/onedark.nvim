@@ -58,9 +58,9 @@ hl.common = {
     CursorLineNr = {fg = c.fg},
     LineNr = {fg = c.grey},
     Conceal = {fg = c.grey, bg = c.bg1},
-    DiffAdd = {fg = c.none, bg = c.diff_add},
-    DiffChange = {fg = c.none, bg = c.diff_change},
-    DiffDelete = {fg = c.none, bg = c.diff_delete},
+    DiffAdd = {fg = c.green, bg = c.diff_add},
+    DiffChange = {fg = c.yellow, bg = c.diff_change},
+    DiffDelete = {fg = c.red, bg = c.diff_delete},
     DiffText = {fg = c.none, bg= c.diff_text},
     DiffAdded = colors.Green,
     DiffRemoved = colors.Red,
@@ -384,26 +384,6 @@ hl.langs.cpp = {
     cppTSInclude = colors.Blue,
     cppTSConstant = colors.Cyan,
     cppTSConstMacro = colors.Purple,
-}
-
-hl.langs.javascript = {
-    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    javascriptTSPunctBracket = {fg = c.fg, bold = true},
-    javascriptTSConstant = colors.Orange,
-    --javascriptTSVariable = colors.BGYellow,
-}
-
-hl.langs.typescript = {
-    tsxTSType = colors.Orange,
-    typescriptTSType = colors.Orange,
-    --tsxTSVariable = colors.BGYellow,
-    --typescriptTSVariable = colors.BGYellow,
-    typescriptTSConstant = colors.Orange,
-    tsxTSConstant = colors.Orange,
-    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    tsxTSPunctBracket = {fg = c.fg, bold = true},
-    typescriptTSPunctBracket = {fg = c.fg, bold = true},
 }
 
 hl.langs.markdown = {
