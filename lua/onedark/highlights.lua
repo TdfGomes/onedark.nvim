@@ -667,23 +667,6 @@ hl.langs.cpp = {
     cppTSOperator = colors.Purple,
 }
 
-hl.langs.javascript = {
-    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    javascriptTSPunctBracket = {fg = c.fg, bold = true},
-    javascriptTSConstant = colors.Orange,
-}
-
-hl.langs.typescript = {
-    tsxTSType = colors.Orange,
-    typescriptTSType = colors.Orange,
-    typescriptTSConstant = colors.Orange,
-    tsxTSConstant = colors.Orange,
-    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    tsxTSPunctBracket = {fg = c.fg, bold = true},
-    typescriptTSPunctBracket = {fg = c.fg, bold = true},
-}
-
 hl.plugins.symbols_outline = {
     FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
 
