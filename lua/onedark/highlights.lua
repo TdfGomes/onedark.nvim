@@ -104,7 +104,7 @@ hl.syntax = {
     Number = colors.Orange,
     Float = colors.Orange,
     Boolean = colors.Orange,
-    Type = colors.Green,
+    Type = colors.Orange,
     Structure = colors.Yellow,
     StorageClass = colors.Yellow,
     Identifier = {fg = c.red, fmt = cfg.code_style.variables},
@@ -716,6 +716,8 @@ hl.langs.javascript = {
 hl.langs.typescript = {
     tsxTSType = colors.Orange,
     typescriptTSType = colors.Orange,
+=======
+>>>>>>> 9016b46 (fix type color)
     --tsxTSVariable = colors.BGYellow,
     --typescriptTSVariable = colors.BGYellow,
     typescriptTSConstant = colors.Orange,
