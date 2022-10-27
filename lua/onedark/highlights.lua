@@ -161,12 +161,12 @@ hl.treesitter = {
     ["@keyword"] = {fg = c.purple, italic = cfg.italic_comment},
     ["@keyword.function"] = {fg = c.purple, bold = true},
     ["@keyword.operator"] = colors.Purple,
+    ["@operator"] = colors.Purple,
     ["@label"] = colors.Red,
     ["@method"] = colors.Blue,
     ["@namespace"] = colors.Yellow,
     ["@none"] = colors.Fg,
     ["@number"] = colors.Orange,
-    ["@number"] = colors.Purple,
     ["@parameter"] = colors.Red,
     ["@parameter.reference"] = colors.Fg,
     ["@property"] = colors.Cyan,
@@ -329,23 +329,6 @@ hl.plugins.dashboard = {
     DashboardHeader = colors.Green,
     DashboardCenter = colors.Blue,
     DashboardFooter = { fg = c.cyan, italic = true}
-}
-
-hl.langs.javascript = {
-    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    javascriptTSPunctBracket = {fg = c.fg, bold = true},
-    javascriptTSConstant = colors.Orange,
-}
-
-hl.langs.typescript = {
-    tsxTSType = colors.Orange,
-    typescriptTSType = colors.Orange,
-    typescriptTSConstant = colors.Orange,
-    tsxTSConstant = colors.Orange,
-    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    tsxTSPunctBracket = {fg = c.fg, bold = true},
-    typescriptTSPunctBracket = {fg = c.fg, bold = true},
 }
 
 hl.plugins.symbols_outline = {
