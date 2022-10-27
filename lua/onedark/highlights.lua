@@ -108,7 +108,7 @@ hl.syntax = {
     Number = colors.Orange,
     Float = colors.Orange,
     Boolean = colors.Orange,
-    Type = colors.Green,
+    Type = colors.Orange,
     Structure = colors.Yellow,
     StorageClass = colors.Yellow,
     Identifier = colors.Red,
@@ -339,7 +339,7 @@ hl.langs.javascript = {
 
 hl.langs.typescript = {
     tsxTSType = colors.Orange,
-    typescriptTSType = colors.Green,
+    typescriptTSType = colors.Orange,
     --tsxTSVariable = colors.BGYellow,
     --typescriptTSVariable = colors.BGYellow,
     typescriptTSConstant = colors.Orange,
