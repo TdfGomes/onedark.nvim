@@ -381,6 +381,7 @@ hl.langs.cpp = {
     cppTSConstMacro = colors.Purple,
 }
 
+
 hl.langs.markdown = {
     markdownBlockquote = colors.Grey,
     markdownBold = {fg = c.none, bold = true},
