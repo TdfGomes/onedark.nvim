@@ -57,9 +57,9 @@ hl.common = {
     CursorLineNr = {fg = c.fg},
     LineNr = {fg = c.grey},
     Conceal = {fg = c.grey, bg = c.bg1},
-    DiffAdd = {fg = c.none, bg = c.diff_add},
-    DiffChange = {fg = c.none, bg = c.diff_change},
-    DiffDelete = {fg = c.none, bg = c.diff_delete},
+    DiffAdd = {fg = c.green, bg = c.diff_add},
+    DiffChange = {fg = c.yellow, bg = c.diff_change},
+    DiffDelete = {fg = c.red, bg = c.diff_delete},
     DiffText = {fg = c.none, bg= c.diff_text},
     DiffAdded = colors.Green,
     DiffRemoved = colors.Red,
@@ -108,7 +108,7 @@ hl.syntax = {
     Number = colors.Orange,
     Float = colors.Orange,
     Boolean = colors.Orange,
-    Type = colors.DarkYellow,
+    Type = colors.Green,
     Structure = colors.Yellow,
     StorageClass = colors.Yellow,
     Identifier = colors.Red,
@@ -339,7 +339,7 @@ hl.langs.javascript = {
 
 hl.langs.typescript = {
     tsxTSType = colors.Orange,
-    typescriptTSType = colors.Orange,
+    typescriptTSType = colors.Green,
     --tsxTSVariable = colors.BGYellow,
     --typescriptTSVariable = colors.BGYellow,
     typescriptTSConstant = colors.Orange,
@@ -352,6 +352,7 @@ hl.langs.typescript = {
 
 hl.plugins.symbols_outline = {
     FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
+}
 
 hl.plugins.ts_rainbow = {
     rainbowcol1 = colors.Grey,
@@ -380,25 +381,6 @@ hl.langs.cpp = {
     cppTSConstMacro = colors.Purple,
 }
 
-hl.langs.javascript = {
-    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    javascriptTSPunctBracket = {fg = c.fg, bold = true},
-    javascriptTSConstant = colors.Orange,
-    --javascriptTSVariable = colors.BGYellow,
-}
-
-hl.langs.typescript = {
-    tsxTSType = colors.Orange,
-    typescriptTSType = colors.Orange,
-    --tsxTSVariable = colors.BGYellow,
-    --typescriptTSVariable = colors.BGYellow,
-    typescriptTSConstant = colors.Orange,
-    tsxTSConstant = colors.Orange,
-    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    tsxTSPunctBracket = {fg = c.fg, bold = true},
-    typescriptTSPunctBracket = {fg = c.fg, bold = true},
-}
 
 hl.langs.markdown = {
     markdownBlockquote = colors.Grey,
