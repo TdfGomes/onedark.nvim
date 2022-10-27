@@ -671,14 +671,11 @@ hl.langs.javascript = {
     javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
     javascriptTSPunctBracket = {fg = c.fg, bold = true},
     javascriptTSConstant = colors.Orange,
-    --javascriptTSVariable = colors.BGYellow,
 }
 
 hl.langs.typescript = {
     tsxTSType = colors.Orange,
     typescriptTSType = colors.Orange,
-    --tsxTSVariable = colors.BGYellow,
-    --typescriptTSVariable = colors.BGYellow,
     typescriptTSConstant = colors.Orange,
     tsxTSConstant = colors.Orange,
     tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
@@ -716,8 +713,6 @@ hl.langs.javascript = {
 hl.langs.typescript = {
     tsxTSType = colors.Orange,
     typescriptTSType = colors.Orange,
-=======
->>>>>>> 9016b46 (fix type color)
     --tsxTSVariable = colors.BGYellow,
     --typescriptTSVariable = colors.BGYellow,
     typescriptTSConstant = colors.Orange,
