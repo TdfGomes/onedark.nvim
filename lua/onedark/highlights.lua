@@ -198,6 +198,7 @@ hl.treesitter = {
     ["@danger"] = colors.Fg,
     ["@type"] = colors.Orange,
     ["@type.builtin"] = colors.Orange,
+    ["@type.qualifier"] = {fg = c.purple, italic = cfg.italic_comment},
     ["@variable"] = colors.Fg,
     ["@variable.builtin"] = colors.Red
 }
