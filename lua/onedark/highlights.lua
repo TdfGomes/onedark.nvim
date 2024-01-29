@@ -22,12 +22,9 @@ local colors = {
     Red = {fg = c.red},
     Cyan = {fg = c.cyan},
     Yellow = {fg = c.yellow},
-    DarkYellow = {fg = c.dark_yellow},
-    BGYellow = {fg = c.bg_yellow},
     Orange = {fg = c.orange},
     Green = {fg = c.green},
     Blue = {fg = c.blue},
-    BGBlue = {fg = c.bg_blue},
     Purple = {fg = c.purple}
 }
 hl.common = {
@@ -49,9 +46,9 @@ hl.common = {
     CursorLineNr = {fg = c.fg},
     LineNr = {fg = c.grey},
     Conceal = {fg = c.grey, bg = c.bg1},
-    DiffAdd = {fg = c.green, bg = c.diff_add},
-    DiffChange = {fg = c.yellow, bg = c.diff_change},
-    DiffDelete = {fg = c.red, bg = c.diff_delete},
+    DiffAdd = {fg = c.none, bg = c.diff_add},
+    DiffChange = {fg = c.none, bg = c.diff_change},
+    DiffDelete = {fg = c.none, bg = c.diff_delete},
     DiffText = {fg = c.none, bg= c.diff_text},
     DiffAdded = colors.Green,
     DiffRemoved = colors.Red,
@@ -104,7 +101,7 @@ hl.syntax = {
     Number = colors.Orange,
     Float = colors.Orange,
     Boolean = colors.Orange,
-    Type = colors.Orange,
+    Type = colors.Yellow,
     Structure = colors.Yellow,
     StorageClass = colors.Yellow,
     Identifier = {fg = c.red, fmt = cfg.code_style.variables},
@@ -204,7 +201,19 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@variable.builtin"] = {fg = c.red, fmt = cfg.code_style.variables},
         ["@variable.member"] = colors.Cyan,
         ["@variable.parameter"] = colors.Red,
-        
+        ["@markup.heading.1.markdown"] = {fg = c.red, fmt = "bold"},
+        ["@markup.heading.2.markdown"] = {fg = c.purple, fmt = "bold"},
+        ["@markup.heading.3.markdown"] = {fg = c.orange, fmt = "bold"},
+        ["@markup.heading.4.markdown"] = {fg = c.red, fmt = "bold"},
+        ["@markup.heading.5.markdown"] = {fg = c.purple, fmt = "bold"},
+        ["@markup.heading.6.markdown"] = {fg = c.orange, fmt = "bold"},
+        ["@markup.heading.1.marker.markdown"] = {fg = c.red, fmt = "bold"},
+        ["@markup.heading.2.marker.markdown"] = {fg = c.purple, fmt = "bold"},
+        ["@markup.heading.3.marker.markdown"] = {fg = c.orange, fmt = "bold"},
+        ["@markup.heading.4.marker.markdown"] = {fg = c.red, fmt = "bold"},
+        ["@markup.heading.5.marker.markdown"] = {fg = c.purple, fmt = "bold"},
+        ["@markup.heading.6.marker.markdown"] = {fg = c.orange, fmt = "bold"},
+
         -- Old configuration for nvim-treesiter@0.9.1 and below
         ["@conditional"] = {fg = c.purple, fmt = cfg.code_style.keywords},
         ["@exception"] = colors.Purple,
@@ -517,9 +526,8 @@ hl.plugins.nvim_tree = {
     NvimTreeIndentMarker = colors.Fg,
     NvimTreeImageFile = { fg = c.dark_purple },
     NvimTreeSymlink = colors.Purple,
-    NvimTreeFolderName= colors.Fg
+    NvimTreeFolderName = colors.Blue,
 }
-
 hl.plugins.telescope = {
     TelescopeBorder = colors.Red,
     TelescopePromptBorder = colors.Cyan,
@@ -667,49 +675,6 @@ hl.langs.cpp = {
     cppTSOperator = colors.Purple,
 }
 
-hl.plugins.symbols_outline = {
-    FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
-
-hl.langs.c = {
-    cInclude = colors.Blue,
-    cStorageClass = colors.Purple,
-    cTypedef = colors.Purple,
-    cDefine = colors.Cyan,
-    cTSInclude = colors.Blue,
-    cTSConstant = colors.Cyan,
-    cTSConstMacro = colors.Purple,
-}
-
-hl.langs.cpp = {
-    cppTSInclude = colors.Blue,
-    cppTSConstant = colors.Cyan,
-      cppTSConstMacro = colors.Purple,
-  }
-
-hl.langs.javascript = {
-    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    javascriptTSPunctBracket = {fg = c.fg, bold = true},
-    javascriptTSConstant = colors.Orange,
-    --javascriptTSVariable = colors.BGYellow,
-}
-
-hl.langs.typescript = {
-    tsxTSType = colors.Orange,
-    typescriptTSType = colors.Orange,
-    --tsxTSVariable = colors.BGYellow,
-    --typescriptTSVariable = colors.BGYellow,
-    typescriptTSConstant = colors.Orange,
-    tsxTSConstant = colors.Orange,
-    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    tsxTSPunctBracket = {fg = c.fg, bold = true},
-    typescriptTSPunctBracket = {fg = c.fg, bold = true},
-}
-
-hl.plugins.symbols_outline = {
-    FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
-}
-
 hl.langs.markdown = {
     markdownBlockquote = colors.Grey,
     markdownBold = {fg = c.none, fmt = "bold"},
@@ -755,6 +720,26 @@ hl.langs.php = {
     phpSCKeyword = {fg = c.purple, fmt = cfg.code_style.keywords},
     phpFCKeyword = {fg = c.purple, fmt = cfg.code_style.keywords},
     phpRegion = colors.Blue
+}
+
+hl.langs.javascript = {
+    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    javascriptTSPunctBracket = {fg = c.fg, bold = true},
+    javascriptTSConstant = colors.Orange,
+    --javascriptTSVariable = colors.BGYellow,
+}
+
+hl.langs.typescript = {
+    tsxTSType = colors.Orange,
+    typescriptTSType = colors.Orange,
+    --tsxTSVariable = colors.BGYellow,
+    --typescriptTSVariable = colors.BGYellow,
+    typescriptTSConstant = colors.Orange,
+    tsxTSConstant = colors.Orange,
+    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    tsxTSPunctBracket = {fg = c.fg, bold = true},
+    typescriptTSPunctBracket = {fg = c.fg, bold = true},
 }
 
 hl.langs.scala = {
