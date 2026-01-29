@@ -170,7 +170,7 @@ hl.syntax = {
 	typescriptInterfaceName = colors.Orange,
 	typescriptArrayMethod = colors.Blue,
 	typescriptEndColons = { fg = c.grey, fmt = "bold" },
-	typescriptMemberOptionality = { fg = c.grey, fmt = "bold" },
+	typescriptMemberOptionality = { fg = c.fg, fmt = "bold" },
 }
 
 hl.treesitter = {
