@@ -155,237 +155,174 @@ hl.syntax = {
 	typescriptAssign = colors.Purple,
 	tsxEqual = colors.Purple,
 	typescriptBinaryOp = colors.Purple,
+	typescriptVariableDeclaration = colors.Blue,
+	typescriptTypeReference = { fg = c.yellow, fmt = "none" },
+	typescriptArrowFunc = colors.Purple,
 }
 
-if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
-	hl.treesitter = {
-		-- Modern standardized nvim-treesitter captures (Neovim 0.9+)
-		-- Reference: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights
+hl.treesitter = {
+	-- Modern standardized nvim-treesitter captures (Neovim 0.9+)
+	-- Reference: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights
 
-		-- Attributes
-		["@attribute"] = colors.Cyan,
-		["@attribute.builtin"] = colors.Blue,
+	-- Attributes
+	["@attribute"] = colors.Cyan,
+	["@attribute.builtin"] = colors.Blue,
 
-		-- Primitives
-		["@boolean"] = colors.Orange,
-		["@character"] = colors.Orange,
-		["@character.special"] = colors.Red,
-		["@number"] = colors.Orange,
-		["@number.float"] = colors.Orange,
+	-- Primitives
+	["@boolean"] = colors.Orange,
+	["@character"] = colors.Orange,
+	["@character.special"] = colors.Red,
+	["@number"] = colors.Orange,
+	["@number.float"] = colors.Orange,
 
-		-- Comments
-		["@comment"] = { fg = c.grey, fmt = cfg.code_style.comments },
-		["@comment.documentation"] = { fg = c.grey, fmt = cfg.code_style.comments }, -- Same as regular comments for consistency
-		["@comment.error"] = { fg = c.red, fmt = cfg.code_style.comments },
-		["@comment.note"] = { fg = c.blue, fmt = cfg.code_style.comments },
-		["@comment.todo"] = { fg = c.purple, fmt = cfg.code_style.comments },
-		["@comment.warning"] = { fg = c.yellow, fmt = cfg.code_style.comments },
+	-- Comments
+	["@comment"] = { fg = c.grey, fmt = cfg.code_style.comments },
+	["@comment.documentation"] = { fg = c.grey, fmt = cfg.code_style.comments }, -- Same as regular comments for consistency
+	["@comment.error"] = { fg = c.red, fmt = cfg.code_style.comments },
+	["@comment.note"] = { fg = c.blue, fmt = cfg.code_style.comments },
+	["@comment.todo"] = { fg = c.purple, fmt = cfg.code_style.comments },
+	["@comment.warning"] = { fg = c.yellow, fmt = cfg.code_style.comments },
 
-		-- Constants
-		["@constant"] = { fg = c.orange, fmt = cfg.code_style.constants },
-		["@constant.builtin"] = { fg = c.orange, fmt = cfg.code_style.constants },
-		["@constant.macro"] = { fg = c.orange, fmt = cfg.code_style.constants },
+	-- Constants
+	["@constant"] = { fg = c.orange, fmt = cfg.code_style.constants },
+	["@constant.builtin"] = { fg = c.orange, fmt = cfg.code_style.constants },
+	["@constant.macro"] = { fg = c.orange, fmt = cfg.code_style.constants },
 
-		-- Constructors
-		["@constructor"] = { fg = c.yellow, fmt = "bold" },
+	-- Constructors
+	["@constructor"] = { fg = c.yellow, fmt = "bold" },
 
-		-- Diffs
-		["@diff.plus"] = hl.common.DiffAdded,
-		["@diff.minus"] = hl.common.DiffDeleted,
-		["@diff.delta"] = hl.common.DiffChanged,
+	-- Diffs
+	["@diff.plus"] = hl.common.DiffAdded,
+	["@diff.minus"] = hl.common.DiffDeleted,
+	["@diff.delta"] = hl.common.DiffChanged,
 
-		-- Functions
-		["@function"] = { fg = c.blue, fmt = cfg.code_style.functions },
-		["@function.builtin"] = { fg = c.cyan, fmt = cfg.code_style.functions },
-		["@function.call"] = { fg = c.blue, fmt = cfg.code_style.functions },
-		["@function.macro"] = { fg = c.cyan, fmt = cfg.code_style.functions },
-		["@function.method"] = { fg = c.blue, fmt = cfg.code_style.functions },
-		["@function.method.call"] = { fg = c.blue, fmt = cfg.code_style.functions },
+	-- Functions
+	["@function"] = { fg = c.blue, fmt = cfg.code_style.functions },
+	["@function.builtin"] = { fg = c.cyan, fmt = cfg.code_style.functions },
+	["@function.call"] = { fg = c.blue, fmt = cfg.code_style.functions },
+	["@function.macro"] = { fg = c.cyan, fmt = cfg.code_style.functions },
+	["@function.method"] = { fg = c.blue, fmt = cfg.code_style.functions },
+	["@function.method.call"] = { fg = c.blue, fmt = cfg.code_style.functions },
 
-		-- Keywords
-		["@keyword"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-		["@keyword.conditional"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-		["@keyword.conditional.ternary"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-		["@keyword.coroutine"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-		["@keyword.debug"] = { fg = c.red, fmt = cfg.code_style.keywords },
-		["@keyword.directive"] = colors.Purple,
-		["@keyword.directive.define"] = colors.Purple,
-		["@keyword.exception"] = colors.Purple,
-		["@keyword.function"] = { fg = c.purple, fmt = cfg.code_style.functions },
-		["@keyword.import"] = colors.Purple,
-		["@keyword.modifier"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-		["@keyword.operator"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-		["@keyword.repeat"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-		["@keyword.return"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-		["@keyword.type"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	-- Keywords
+	["@keyword"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	["@keyword.conditional"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	["@keyword.conditional.ternary"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	["@keyword.coroutine"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	["@keyword.debug"] = { fg = c.red, fmt = cfg.code_style.keywords },
+	["@keyword.directive"] = colors.Purple,
+	["@keyword.directive.define"] = colors.Purple,
+	["@keyword.exception"] = colors.Purple,
+	["@keyword.function"] = { fg = c.purple, fmt = cfg.code_style.functions },
+	["@keyword.import"] = colors.Purple,
+	["@keyword.modifier"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	["@keyword.operator"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	["@keyword.repeat"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	["@keyword.return"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	["@keyword.type"] = { fg = c.purple, fmt = cfg.code_style.keywords },
 
-		-- Labels
-		["@label"] = colors.Red,
+	-- Labels
+	["@label"] = colors.Red,
 
-		-- Markup (Markdown, etc.)
-		["@markup.strong"] = { fg = c.fg, fmt = "bold" },
-		["@markup.italic"] = { fg = c.fg, fmt = "italic" },
-		["@markup.strikethrough"] = { fg = c.fg, fmt = "strikethrough" },
-		["@markup.underline"] = { fg = c.fg, fmt = "underline" },
-		["@markup.heading"] = { fg = c.orange, fmt = "bold" },
-		["@markup.heading.1"] = { fg = c.red, fmt = "bold" },
-		["@markup.heading.2"] = { fg = c.purple, fmt = "bold" },
-		["@markup.heading.3"] = { fg = c.orange, fmt = "bold" },
-		["@markup.heading.4"] = { fg = c.red, fmt = "bold" },
-		["@markup.heading.5"] = { fg = c.purple, fmt = "bold" },
-		["@markup.heading.6"] = { fg = c.orange, fmt = "bold" },
-		["@markup.link"] = colors.Blue,
-		["@markup.link.label"] = colors.Cyan,
-		["@markup.link.url"] = { fg = c.cyan, fmt = "underline" },
-		["@markup.list"] = colors.Red,
-		["@markup.list.checked"] = { fg = c.green, fmt = cfg.code_style.comments },
-		["@markup.list.unchecked"] = { fg = c.red, fmt = cfg.code_style.comments },
-		["@markup.math"] = colors.Fg,
-		["@markup.quote"] = { fg = c.grey, fmt = "italic" },
-		["@markup.raw"] = colors.Green,
-		["@markup.raw.block"] = colors.Green,
+	-- Markup (Markdown, etc.)
+	["@markup.strong"] = { fg = c.fg, fmt = "bold" },
+	["@markup.italic"] = { fg = c.fg, fmt = "italic" },
+	["@markup.strikethrough"] = { fg = c.fg, fmt = "strikethrough" },
+	["@markup.underline"] = { fg = c.fg, fmt = "underline" },
+	["@markup.heading"] = { fg = c.orange, fmt = "bold" },
+	["@markup.heading.1"] = { fg = c.red, fmt = "bold" },
+	["@markup.heading.2"] = { fg = c.purple, fmt = "bold" },
+	["@markup.heading.3"] = { fg = c.orange, fmt = "bold" },
+	["@markup.heading.4"] = { fg = c.red, fmt = "bold" },
+	["@markup.heading.5"] = { fg = c.purple, fmt = "bold" },
+	["@markup.heading.6"] = { fg = c.orange, fmt = "bold" },
+	["@markup.link"] = colors.Blue,
+	["@markup.link.label"] = colors.Cyan,
+	["@markup.link.url"] = { fg = c.cyan, fmt = "underline" },
+	["@markup.list"] = colors.Red,
+	["@markup.list.checked"] = { fg = c.green, fmt = cfg.code_style.comments },
+	["@markup.list.unchecked"] = { fg = c.red, fmt = cfg.code_style.comments },
+	["@markup.math"] = colors.Fg,
+	["@markup.quote"] = { fg = c.grey, fmt = "italic" },
+	["@markup.raw"] = colors.Green,
+	["@markup.raw.block"] = colors.Green,
 
-		-- Modules
-		["@module"] = colors.Yellow,
-		["@module.builtin"] = colors.Orange,
+	-- Modules
+	["@module"] = colors.Yellow,
+	["@module.builtin"] = colors.Orange,
 
-		-- Misc
-		["@none"] = colors.Fg,
-		["@conceal"] = colors.Grey,
+	-- Misc
+	["@none"] = colors.Fg,
+	["@conceal"] = colors.Grey,
 
-		-- Operators
-		["@operator"] = colors.Fg,
+	-- Operators
+	["@operator"] = colors.Fg,
 
-		-- Properties
-		["@property"] = { fg = c.cyan, fmt = "none" },
+	-- Properties
+	["@property"] = { fg = c.cyan, fmt = "none" },
 
-		-- Punctuation
-		["@punctuation.bracket"] = colors.LightGrey,
-		["@punctuation.delimiter"] = colors.LightGrey,
-		["@punctuation.special"] = colors.Red,
+	-- Punctuation
+	["@punctuation.bracket"] = colors.LightGrey,
+	["@punctuation.delimiter"] = colors.LightGrey,
+	["@punctuation.special"] = colors.Red,
 
-		-- Strings
-		["@string"] = { fg = c.green, fmt = cfg.code_style.strings },
-		["@string.documentation"] = { fg = c.green, fmt = cfg.code_style.strings },
-		["@string.escape"] = { fg = c.red, fmt = cfg.code_style.strings },
-		["@string.regexp"] = { fg = c.orange, fmt = cfg.code_style.strings },
-		["@string.special"] = { fg = c.dark_cyan, fmt = cfg.code_style.strings },
-		["@string.special.path"] = { fg = c.green, fmt = cfg.code_style.strings },
-		["@string.special.symbol"] = colors.Cyan,
-		["@string.special.url"] = { fg = c.cyan, fmt = "underline" },
+	-- Strings
+	["@string"] = { fg = c.green, fmt = cfg.code_style.strings },
+	["@string.documentation"] = { fg = c.green, fmt = cfg.code_style.strings },
+	["@string.escape"] = { fg = c.red, fmt = cfg.code_style.strings },
+	["@string.regexp"] = { fg = c.orange, fmt = cfg.code_style.strings },
+	["@string.special"] = { fg = c.dark_cyan, fmt = cfg.code_style.strings },
+	["@string.special.path"] = { fg = c.green, fmt = cfg.code_style.strings },
+	["@string.special.symbol"] = colors.Cyan,
+	["@string.special.url"] = { fg = c.cyan, fmt = "underline" },
 
-		-- Tags (HTML, JSX, TSX, XML)
-		["@tag"] = colors.Purple,
-		["@tag.builtin"] = colors.Purple,
-		["@tag.attribute"] = colors.Yellow,
-		["@tag.delimiter"] = colors.Purple,
+	-- Tags (HTML, JSX, TSX, XML)
+	["@tag"] = colors.Purple,
+	["@tag.builtin"] = colors.Purple,
+	["@tag.attribute"] = colors.Yellow,
+	["@tag.delimiter"] = colors.Purple,
 
-		-- Types
-		["@type"] = colors.Yellow,
-		["@type.builtin"] = colors.Orange,
-		["@type.definition"] = colors.Yellow,
+	-- Types
+	["@type"] = colors.Yellow,
+	["@type.builtin"] = colors.Orange,
+	["@type.definition"] = colors.Yellow,
 
-		-- Variables
-		["@variable"] = { fg = c.fg, fmt = cfg.code_style.variables },
-		["@variable.builtin"] = { fg = c.red, fmt = cfg.code_style.variables },
-		["@variable.member"] = { fg = c.cyan, fmt = "none" },
-		["@variable.parameter"] = colors.Red,
-		["@variable.parameter.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
-	}
-	if vim.api.nvim_call_function("has", { "nvim-0.9" }) == 1 then
-		hl.lsp = {
-			["@lsp.type.comment"] = hl.treesitter["@comment"],
-			["@lsp.type.enum"] = hl.treesitter["@type"],
-			["@lsp.type.enumMember"] = hl.treesitter["@constant.builtin"],
-			["@lsp.type.interface"] = hl.treesitter["@type"],
-			["@lsp.type.typeParameter"] = hl.treesitter["@type"],
-			["@lsp.type.keyword"] = hl.treesitter["@keyword"],
-			["@lsp.type.namespace"] = hl.treesitter["@module"],
-			["@lsp.type.parameter"] = hl.treesitter["@variable.parameter"],
-			["@lsp.type.property"] = hl.treesitter["@property"],
-			["@lsp.type.variable"] = hl.treesitter["@variable"],
-			["@lsp.type.macro"] = hl.treesitter["@function.macro"],
-			["@lsp.type.method"] = hl.treesitter["@function.method"],
-			["@lsp.type.number"] = hl.treesitter["@number"],
-			["@lsp.type.generic"] = hl.treesitter["@text"],
-			["@lsp.type.builtinType"] = hl.treesitter["@type.builtin"],
-			["@lsp.typemod.method.defaultLibrary"] = hl.treesitter["@function"],
-			["@lsp.typemod.function.defaultLibrary"] = hl.treesitter["@function"],
-			["@lsp.typemod.operator.injected"] = hl.treesitter["@operator"],
-			["@lsp.typemod.string.injected"] = hl.treesitter["@string"],
-			["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@variable.builtin"],
-			["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
-			["@lsp.typemod.variable.static"] = hl.treesitter["@constant"],
-			-- tsx
-			["@lsp.type.function.typescriptreact"] = colors.Blue,
-			["@lsp.type.member.typescriptreact"] = colors.Blue,
-			["@lsp.mod.declaration.typescriptreact"] = { fg = c.fg, fmt = "none" },
-			["@lsp.type.interface.typescriptreact"] = hl.treesitter["@type"],
-		}
-	end
-else
-	hl.treesitter = {
-		TSAnnotation = colors.Fg,
-		TSAttribute = colors.Cyan,
-		TSBoolean = colors.Orange,
-		TSCharacter = colors.Orange,
-		TSComment = { fg = c.grey, fmt = cfg.code_style.comments },
-		TSConditional = { fg = c.purple, fmt = cfg.code_style.keywords },
-		TSConstant = colors.Orange,
-		TSConstBuiltin = colors.Orange,
-		TSConstMacro = colors.Orange,
-		TSConstructor = { fg = c.yellow, fmt = "bold" },
-		TSError = colors.Fg,
-		TSException = colors.Purple,
-		TSField = colors.Cyan,
-		TSFloat = colors.Orange,
-		TSFunction = { fg = c.blue, fmt = cfg.code_style.functions },
-		TSFuncBuiltin = { fg = c.cyan, fmt = cfg.code_style.functions },
-		TSFuncMacro = { fg = c.cyan, fmt = cfg.code_style.functions },
-		TSInclude = colors.Purple,
-		TSKeyword = { fg = c.purple, fmt = cfg.code_style.keywords },
-		TSKeywordFunction = { fg = c.purple, fmt = cfg.code_style.functions },
-		TSKeywordOperator = { fg = c.purple, fmt = cfg.code_style.keywords },
-		TSLabel = colors.Red,
-		TSMethod = { fg = c.blue, fmt = cfg.code_style.functions },
-		TSNamespace = colors.Yellow,
-		TSNone = colors.Fg,
-		TSNumber = colors.Orange,
-		TSOperator = colors.Fg,
-		TSParameter = colors.Red,
-		TSParameterReference = colors.Fg,
-		TSProperty = colors.Cyan,
-		TSPunctDelimiter = colors.LightGrey,
-		TSPunctBracket = colors.LightGrey,
-		TSPunctSpecial = colors.Red,
-		TSRepeat = { fg = c.purple, fmt = cfg.code_style.keywords },
-		TSString = { fg = c.green, fmt = cfg.code_style.strings },
-		TSStringRegex = { fg = c.orange, fmt = cfg.code_style.strings },
-		TSStringEscape = { fg = c.red, fmt = cfg.code_style.strings },
-		TSSymbol = colors.Cyan,
-		TSTag = colors.Purple,
-		TSTagDelimiter = colors.Purple,
-		TSText = colors.Fg,
-		TSStrong = { fg = c.fg, fmt = "bold" },
-		TSEmphasis = { fg = c.fg, fmt = "italic" },
-		TSUnderline = { fg = c.fg, fmt = "underline" },
-		TSStrike = { fg = c.fg, fmt = "strikethrough" },
-		TSTitle = { fg = c.orange, fmt = "bold" },
-		TSLiteral = colors.Green,
-		TSURI = { fg = c.cyan, fmt = "underline" },
-		TSMath = colors.Fg,
-		TSTextReference = colors.Blue,
-		TSEnvironment = colors.Fg,
-		TSEnvironmentName = colors.Fg,
-		TSNote = colors.Fg,
-		TSWarning = colors.Fg,
-		TSDanger = colors.Fg,
-		TSType = colors.Yellow,
-		TSTypeBuiltin = colors.Orange,
-		TSVariable = { fg = c.fg, fmt = cfg.code_style.variables },
-		TSVariableBuiltin = { fg = c.red, fmt = cfg.code_style.variables },
-	}
-end
+	-- Variables
+	["@variable"] = { fg = c.fg, fmt = cfg.code_style.variables },
+	["@variable.builtin"] = { fg = c.red, fmt = cfg.code_style.variables },
+	["@variable.member"] = { fg = c.cyan, fmt = "none" },
+	["@variable.parameter"] = colors.Red,
+	["@variable.parameter.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
+}
+hl.lsp = {
+	["@lsp.type.comment"] = hl.treesitter["@comment"],
+	["@lsp.type.enum"] = hl.treesitter["@type"],
+	["@lsp.type.enumMember"] = hl.treesitter["@constant.builtin"],
+	["@lsp.type.interface"] = hl.treesitter["@type"],
+	["@lsp.type.typeParameter"] = hl.treesitter["@type"],
+	["@lsp.type.keyword"] = hl.treesitter["@keyword"],
+	["@lsp.type.namespace"] = hl.treesitter["@module"],
+	["@lsp.type.parameter"] = hl.treesitter["@variable.parameter"],
+	["@lsp.type.property"] = hl.treesitter["@property"],
+	["@lsp.type.variable"] = hl.treesitter["@variable"],
+	["@lsp.type.macro"] = hl.treesitter["@function.macro"],
+	["@lsp.type.method"] = hl.treesitter["@function.method"],
+	["@lsp.type.number"] = hl.treesitter["@number"],
+	["@lsp.type.generic"] = hl.treesitter["@text"],
+	["@lsp.type.builtinType"] = hl.treesitter["@type.builtin"],
+	["@lsp.typemod.method.defaultLibrary"] = hl.treesitter["@function"],
+	["@lsp.typemod.function.defaultLibrary"] = hl.treesitter["@function"],
+	["@lsp.typemod.operator.injected"] = hl.treesitter["@operator"],
+	["@lsp.typemod.string.injected"] = hl.treesitter["@string"],
+	["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@variable.builtin"],
+	["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
+	["@lsp.typemod.variable.static"] = hl.treesitter["@constant"],
+	-- tsx
+	["@lsp.type.function.typescriptreact"] = colors.Blue,
+	["@lsp.type.member.typescriptreact"] = colors.Blue,
+	["@lsp.mod.declaration.typescriptreact"] = { fg = c.fg, fmt = "none" },
+	["@lsp.type.interface.typescriptreact"] = hl.treesitter["@type"],
+}
 
 local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
 local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple or c.purple
@@ -1033,9 +970,7 @@ function M.setup()
 	vim_highlights(hl.common)
 	vim_highlights(hl.syntax)
 	vim_highlights(hl.treesitter)
-	if hl.lsp then
-		vim_highlights(hl.lsp)
-	end
+	vim_highlights(hl.lsp)
 	for _, group in pairs(hl.langs) do
 		vim_highlights(group)
 	end
