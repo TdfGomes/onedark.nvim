@@ -135,7 +135,7 @@ hl.syntax = {
 	Exception = colors.Purple,
 	Conditional = { fg = c.purple, fmt = cfg.code_style.variables },
 	Repeat = { fg = c.purple, fmt = cfg.code_style.keywords },
-	Statement = colors.Purple,
+	Statement = { fg = c.purple, fmt = cfg.code_style.variables },
 	Macro = colors.Red,
 	Error = colors.Purple,
 	Label = colors.Purple,
@@ -149,6 +149,12 @@ hl.syntax = {
 	Comment = { fg = c.grey, fmt = cfg.code_style.comments },
 	SpecialComment = { fg = c.grey, fmt = cfg.code_style.comments },
 	Todo = { fg = c.red, fmt = cfg.code_style.comments },
+	--html
+	htmlTag = colors.Red,
+	-- tsx
+	typescriptAssign = colors.Purple,
+	tsxEqual = colors.Purple,
+	typescriptBinaryOp = colors.Purple,
 }
 
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
@@ -251,7 +257,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 		["@operator"] = colors.Fg,
 
 		-- Properties
-		["@property"] = colors.Cyan,
+		["@property"] = { fg = c.cyan, fmt = "none" },
 
 		-- Punctuation
 		["@punctuation.bracket"] = colors.LightGrey,
@@ -282,7 +288,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 		-- Variables
 		["@variable"] = { fg = c.fg, fmt = cfg.code_style.variables },
 		["@variable.builtin"] = { fg = c.red, fmt = cfg.code_style.variables },
-		["@variable.member"] = colors.Cyan,
+		["@variable.member"] = { fg = c.cyan, fmt = "none" },
 		["@variable.parameter"] = colors.Red,
 		["@variable.parameter.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
 	}
@@ -310,6 +316,10 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 			["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@variable.builtin"],
 			["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
 			["@lsp.typemod.variable.static"] = hl.treesitter["@constant"],
+			-- tsx
+			["@lsp.type.member.typescriptreact"] = colors.Blue,
+			["@lsp.mod.declaration.typescriptreact"] = { fg = c.fg, fmt = "none" },
+			["@lsp.type.interface.typescriptreact"] = hl.treesitter["@type"],
 		}
 	end
 else
