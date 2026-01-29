@@ -321,7 +321,6 @@ hl.treesitter = {
 	["@type.definition"] = colors.Yellow,
 
 	-- Variables
-	["@variable"] = { fg = c.fg, fmt = cfg.code_style.variables },
 	["@variable.typescript"] = { fg = c.fg, fmt = "bold" },
 	["@variable.builtin"] = { fg = c.red, fmt = cfg.code_style.variables },
 	["@variable.member"] = { fg = c.cyan, fmt = "none" },
@@ -331,6 +330,7 @@ hl.treesitter = {
 	["@variable.parameter.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
 	["@variable.lua"] = { fg = c.fg, fmt = "bold" },
 	["@variable.python"] = { fg = c.fg, fmt = "bold" },
+	["@variable"] = { fg = c.fg, fmt = cfg.code_style.variables },
 }
 hl.lsp = {
 	["@lsp.type.comment"] = hl.treesitter["@comment"],
