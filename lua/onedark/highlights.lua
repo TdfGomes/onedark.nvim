@@ -248,6 +248,8 @@ hl.treesitter = {
 	["@keyword.repeat"] = { fg = c.purple, fmt = cfg.code_style.keywords },
 	["@keyword.return"] = { fg = c.purple, fmt = cfg.code_style.keywords },
 	["@keyword.type"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	["@keyword.function.python"] = { fg = c.purple, fmt = cfg.code_style.variables },
+	["@keyword.exception.python"] = { fg = c.purple, fmt = cfg.code_style.variables },
 
 	-- Labels
 	["@label"] = colors.Red,
@@ -287,6 +289,7 @@ hl.treesitter = {
 	-- Operators
 	["@operator"] = colors.Fg,
 	["@operator.typescript"] = colors.Purple,
+	["@operator.python"] = colors.Purple,
 
 	-- Properties
 	["@property"] = { fg = c.cyan, fmt = "none" },
