@@ -169,6 +169,8 @@ hl.syntax = {
 	typescriptTemplateSB = { fg = c.grey, fmt = "bold" },
 	typescriptInterfaceName = colors.Orange,
 	typescriptArrayMethod = colors.Blue,
+	typescriptEndColons = { fg = c.grey, fmt = "bold" },
+	typescriptMemberOptionality = { fg = c.grey, fmt = "bold" },
 }
 
 hl.treesitter = {
@@ -314,6 +316,7 @@ hl.treesitter = {
 	["@variable.parameter"] = { fb = c.red, fmt = "none" },
 	["@variable.parameter.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
 	["@variable.lua"] = { fg = c.fg, fmt = "bold" },
+	["@variable.python"] = { fg = c.fg, fmt = "bold" },
 }
 hl.lsp = {
 	["@lsp.type.comment"] = hl.treesitter["@comment"],
@@ -355,6 +358,7 @@ hl.lsp = {
 	["@lsp.typemod.interface.declaration.typescriptreact"] = colors.Orange,
 	["@lsp.typemod.member.defaultLibrary.typescriptreact"] = colors.Blue,
 	["@lsp.mod.defaultLibrary.typescriptreact"] = colors.Blue,
+	["@lsp.type.parameter.typescriptreact"] = colors.Red,
 }
 
 local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
@@ -455,7 +459,7 @@ hl.plugins.barbar = {
 
 hl.plugins.lazy = {
 	LazyButton = { fg = c.bg_yellow },
-	LazyButtonActive = { fg = c.light_grey, bg = c.bg_yellow },
+	LazyButtonActive = { fg = c.grey, bg = c.bg_yellow },
 }
 
 hl.plugins.cmp = {
