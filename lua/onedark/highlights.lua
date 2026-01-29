@@ -159,6 +159,7 @@ hl.syntax = {
 	typescriptTypeReference = { fg = c.yellow, fmt = "none" },
 	typescriptArrowFunc = colors.Purple,
 	tsxCloseString = colors.Red,
+	tsxEscJs = colors.Orange,
 	typescriptIdentifierName = { fg = c.fg, fmt = "none" },
 	typescriptFuncComma = { fg = c.fg, fmt = "bold" },
 	typescriptTypeAnnotation = { fg = c.fg, fmt = "bold" },
@@ -467,7 +468,8 @@ hl.plugins.barbar = {
 
 hl.plugins.lazy = {
 	LazyButton = { fg = c.bg_yellow },
-	LazyButtonActive = { fg = c.grey, bg = c.bg_yellow },
+	LazySpecial = { fg = c.orange },
+	LazyButtonActive = { fg = c.bg0, bg = c.bg_yellow },
 }
 
 hl.plugins.cmp = {
