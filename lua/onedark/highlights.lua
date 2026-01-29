@@ -180,6 +180,8 @@ hl.syntax = {
 	typescriptFuncTypeArrow = colors.Purple,
 	typescriptInterfaceKeyword = { fg = c.purple, fmt = cfg.code_style.variables },
 	typescriptAliasKeyword = { fg = c.purple, fmt = cfg.code_style.variables },
+	typescriptTestGlobal = { fg = c.blue, fmt = "bold" },
+	typescriptUnaryOp = { fg = c.purple, fmt = "bold" },
 }
 
 hl.treesitter = {
@@ -359,15 +361,17 @@ hl.lsp = {
 	["@lsp.type.function.typescriptreact"] = colors.Blue,
 	["@lsp.type.member.typescriptreact"] = colors.Blue,
 	["@lsp.type.interface.typescriptreact"] = hl.treesitter["@type"],
+	["@lsp.type.namespace.typescriptreact"] = colors.Yellow,
+	["@lsp.type.parameter.typescriptreact"] = colors.Red,
 	["@lsp.mod.declaration.typescriptreact"] = { fg = c.fg, fmt = "none" },
+	["@lsp.mod.defaultLibrary.typescriptreact"] = colors.Blue,
+	["@lsp.typemod.class.defaultLibrary.typescriptreact"] = colors.Yellow,
 	["@lsp.typemod.function.declaration.typescriptreact"] = colors.Blue,
 	["@lsp.typemod.function.readonly.typescriptreact"] = colors.Blue,
 	["@lsp.typemod.property.declaration.typescriptreact"] = colors.Cyan,
 	["@lsp.typemod.parameter.declaration.typescriptreact"] = colors.Red,
 	["@lsp.typemod.interface.declaration.typescriptreact"] = colors.Orange,
 	["@lsp.typemod.member.defaultLibrary.typescriptreact"] = colors.Blue,
-	["@lsp.mod.defaultLibrary.typescriptreact"] = colors.Blue,
-	["@lsp.type.parameter.typescriptreact"] = colors.Red,
 }
 
 local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
