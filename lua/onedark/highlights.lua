@@ -163,6 +163,8 @@ hl.syntax = {
 	typescriptFuncComma = { fg = c.fg, fmt = "bold" },
 	typescriptTypeAnnotation = { fg = c.fg, fmt = "bold" },
 	typescriptBraces = { fg = c.fg, fmt = "bold" },
+	typescriptArrayDestructure = { fg = c.fg, fmt = "bold" },
+	typescriptDestructureVariable = { fg = c.fg, fmt = "bold" },
 	typescriptObjectLabel = colors.Cyan,
 	typescriptBOMWindowProp = { fg = c.red, fmt = cfg.code_style.variables },
 	typescriptDOMDocMethod = colors.Blue,
@@ -171,6 +173,12 @@ hl.syntax = {
 	typescriptArrayMethod = colors.Blue,
 	typescriptEndColons = { fg = c.grey, fmt = "bold" },
 	typescriptMemberOptionality = { fg = c.fg, fmt = "bold" },
+	typescriptImport = { fg = c.purple, fmt = cfg.code_style.variables },
+	typescriptExport = { fg = c.purple, fmt = cfg.code_style.variables },
+	typescriptVariable = { fg = c.purple, fmt = cfg.code_style.variables },
+	typescriptFuncTypeArrow = colors.Purple,
+	typescriptInterfaceKeyword = { fg = c.purple, fmt = cfg.code_style.variables },
+	typescriptAliasKeyword = { fg = c.purple, fmt = cfg.code_style.variables },
 }
 
 hl.treesitter = {
