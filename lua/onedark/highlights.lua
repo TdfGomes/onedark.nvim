@@ -151,21 +151,10 @@ hl.syntax = {
 	Todo = { fg = c.red, fmt = cfg.code_style.comments },
 	--html
 	htmlTag = colors.Red,
-	tsxTag = colors.Red,
 	-- tsx
 	typescriptAssign = colors.Purple,
 	tsxEqual = colors.Purple,
 	typescriptBinaryOp = colors.Purple,
-	typescriptTypeReference = colors.Yellow,
-	typescriptFuncTypeArrow = colors.Purple,
-	["@lsp.type.parameter.typescriptreact"] = colors.Red,
-	["@lsp.type.member.typescriptreact"] = colors.Blue,
-	["@lsp.mod.declaration.typescriptreact"] = { fg = c.fg, fmt = "none" },
-	["@lsp.type.interface.typescriptreact"] = hl.treesitter["@type"],
-	["@lsp.type.function.typescriptreact"] = colors.Blue,
-	-- lua
-	["@lsp.type.property.lua"] = hl.treesitter["@property"],
-	["@operator.lua"] = hl.treesitter["@punctuation.bracket"],
 }
 
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
@@ -327,6 +316,10 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 			["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@variable.builtin"],
 			["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
 			["@lsp.typemod.variable.static"] = hl.treesitter["@constant"],
+			-- tsx
+			["@lsp.type.member.typescriptreact"] = colors.Blue,
+			["@lsp.mod.declaration.typescriptreact"] = { fg = c.fg, fmt = "none" },
+			["@lsp.type.interface.typescriptreact"] = hl.treesitter["@type"],
 		}
 	end
 else
