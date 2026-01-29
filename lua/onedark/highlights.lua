@@ -164,6 +164,11 @@ hl.syntax = {
 	typescriptTypeAnnotation = { fg = c.fg, fmt = "bold" },
 	typescriptBraces = { fg = c.fg, fmt = "bold" },
 	typescriptObjectLabel = colors.Cyan,
+	typescriptBOMWindowProp = { fg = c.red, fmt = cfg.code_style.variables },
+	typescriptDOMDocMethod = colors.Blue,
+	typescriptTemplateSB = { fg = c.grey, fmt = "bold" },
+	typescriptInterfaceName = colors.Orange,
+	typescriptArrayMethod = colors.Blue,
 }
 
 hl.treesitter = {
@@ -211,6 +216,7 @@ hl.treesitter = {
 	["@function.method"] = { fg = c.blue, fmt = cfg.code_style.functions },
 	["@function.method.call"] = { fg = c.blue, fmt = cfg.code_style.functions },
 	["@function.call.typescript"] = { fg = c.blue, fmt = cfg.code_style.functions },
+	["@function.method.call.python"] = { fg = c.blue, fmt = cfg.code_style.functions },
 
 	-- Keywords
 	["@keyword"] = { fg = c.purple, fmt = cfg.code_style.variables },
@@ -256,7 +262,7 @@ hl.treesitter = {
 	["@markup.raw.block"] = colors.Green,
 
 	-- Modules
-	["@module"] = colors.Yellow,
+	["@module"] = { fg = c.yellow, fmt = "none" },
 	["@module.builtin"] = colors.Orange,
 
 	-- Misc
@@ -273,7 +279,7 @@ hl.treesitter = {
 	-- Punctuation
 	["@punctuation.bracket"] = colors.LightGrey,
 	["@punctuation.delimiter"] = colors.LightGrey,
-	["@punctuation.special"] = colors.Grey,
+	["@punctuation.special"] = colors.Fg,
 
 	-- Strings
 	["@string"] = { fg = c.green, fmt = cfg.code_style.strings },
@@ -301,8 +307,9 @@ hl.treesitter = {
 	["@variable.typescript"] = { fg = c.fg, fmt = "bold" },
 	["@variable.builtin"] = { fg = c.red, fmt = cfg.code_style.variables },
 	["@variable.member"] = { fg = c.cyan, fmt = "none" },
-	["@variable.parameter"] = colors.Red,
+	["@variable.parameter"] = { fb = c.red, fmt = "none" },
 	["@variable.parameter.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
+	["@variable.lua"] = { fg = c.fg, fmt = "bold" },
 }
 hl.lsp = {
 	["@lsp.type.comment"] = hl.treesitter["@comment"],
@@ -327,12 +334,23 @@ hl.lsp = {
 	["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@variable.builtin"],
 	["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
 	["@lsp.typemod.variable.static"] = hl.treesitter["@constant"],
+	-- lua
+	["@lsp.type.property.lua"] = hl.treesitter["@property"],
+	["@lsp.type.variable.lua"] = { fg = c.fg, fmt = "none" },
 	-- tsx
-	["@lsp.type.variable.typescriptreact"] = { fg = c.fg, fmt = "none" },
+	["@lsp.type.variable.typescript"] = { fg = c.fg, fmt = "bold" },
+	["@lsp.type.variable.typescriptreact"] = { fg = c.fg, fmt = "bold" },
 	["@lsp.type.function.typescriptreact"] = colors.Blue,
 	["@lsp.type.member.typescriptreact"] = colors.Blue,
-	["@lsp.mod.declaration.typescriptreact"] = { fg = c.fg, fmt = "none" },
 	["@lsp.type.interface.typescriptreact"] = hl.treesitter["@type"],
+	["@lsp.mod.declaration.typescriptreact"] = { fg = c.fg, fmt = "none" },
+	["@lsp.typemod.function.declaration.typescriptreact"] = colors.Blue,
+	["@lsp.typemod.function.readonly.typescriptreact"] = colors.Blue,
+	["@lsp.typemod.property.declaration.typescriptreact"] = colors.Cyan,
+	["@lsp.typemod.parameter.declaration.typescriptreact"] = colors.Red,
+	["@lsp.typemod.interface.declaration.typescriptreact"] = colors.Orange,
+	["@lsp.typemod.member.defaultLibrary.typescriptreact"] = colors.Blue,
+	["@lsp.mod.defaultLibrary.typescriptreact"] = colors.Blue,
 }
 
 local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
