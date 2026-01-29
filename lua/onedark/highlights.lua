@@ -317,6 +317,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 			["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
 			["@lsp.typemod.variable.static"] = hl.treesitter["@constant"],
 			-- tsx
+			["@lsp.type.function.typescriptreact"] = colors.Blue,
 			["@lsp.type.member.typescriptreact"] = colors.Blue,
 			["@lsp.mod.declaration.typescriptreact"] = { fg = c.fg, fmt = "none" },
 			["@lsp.type.interface.typescriptreact"] = hl.treesitter["@type"],
