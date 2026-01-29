@@ -216,7 +216,8 @@ hl.treesitter = {
 	["@function.method"] = { fg = c.blue, fmt = cfg.code_style.functions },
 	["@function.method.call"] = { fg = c.blue, fmt = cfg.code_style.functions },
 	["@function.call.typescript"] = { fg = c.blue, fmt = cfg.code_style.functions },
-	["@function.method.call.python"] = { fg = c.blue, fmt = cfg.code_style.functions },
+	["@function.method.call.python"] = { fg = c.blue, fmt = "none" },
+	["@function.call.python"] = { fg = c.blue, fmt = "none" },
 
 	-- Keywords
 	["@keyword"] = { fg = c.purple, fmt = cfg.code_style.variables },
@@ -263,6 +264,7 @@ hl.treesitter = {
 
 	-- Modules
 	["@module"] = { fg = c.yellow, fmt = "none" },
+	["@module.python"] = { fg = c.yellow, fmt = "none" },
 	["@module.builtin"] = colors.Orange,
 
 	-- Misc
@@ -307,6 +309,8 @@ hl.treesitter = {
 	["@variable.typescript"] = { fg = c.fg, fmt = "bold" },
 	["@variable.builtin"] = { fg = c.red, fmt = cfg.code_style.variables },
 	["@variable.member"] = { fg = c.cyan, fmt = "none" },
+	["@variable.member.python"] = { fg = c.cyan, fmt = "none" },
+	["@variable.parameter.python"] = { fb = c.red, fmt = "none" },
 	["@variable.parameter"] = { fb = c.red, fmt = "none" },
 	["@variable.parameter.builtin"] = { fg = c.orange, fmt = cfg.code_style.variables },
 	["@variable.lua"] = { fg = c.fg, fmt = "bold" },
@@ -581,7 +585,7 @@ hl.plugins.nvim_tree = {
 	NvimTreeIndentMarker = colors.Fg,
 	NvimTreeImageFile = { fg = c.dark_purple },
 	NvimTreeSymlink = colors.Purple,
-	NvimTreeFolderName = colors.Blue,
+	NvimTreeFolderName = colors.Cyan,
 }
 
 hl.plugins.telescope = {
