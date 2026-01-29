@@ -158,6 +158,12 @@ hl.syntax = {
 	typescriptVariableDeclaration = colors.Blue,
 	typescriptTypeReference = { fg = c.yellow, fmt = "none" },
 	typescriptArrowFunc = colors.Purple,
+	tsxCloseString = colors.Red,
+	typescriptIdentifierName = { fg = c.fg, fmt = "none" },
+	typescriptFuncComma = { fg = c.fg, fmt = "bold" },
+	typescriptTypeAnnotation = { fg = c.fg, fmt = "bold" },
+	typescriptBraces = { fg = c.fg, fmt = "bold" },
+	typescriptObjectLabel = colors.Cyan,
 }
 
 hl.treesitter = {
@@ -185,6 +191,7 @@ hl.treesitter = {
 
 	-- Constants
 	["@constant"] = { fg = c.orange, fmt = cfg.code_style.constants },
+	["@constant.typescript"] = colors.Orange,
 	["@constant.builtin"] = { fg = c.orange, fmt = cfg.code_style.constants },
 	["@constant.macro"] = { fg = c.orange, fmt = cfg.code_style.constants },
 
@@ -203,9 +210,10 @@ hl.treesitter = {
 	["@function.macro"] = { fg = c.cyan, fmt = cfg.code_style.functions },
 	["@function.method"] = { fg = c.blue, fmt = cfg.code_style.functions },
 	["@function.method.call"] = { fg = c.blue, fmt = cfg.code_style.functions },
+	["@function.call.typescript"] = { fg = c.blue, fmt = cfg.code_style.functions },
 
 	-- Keywords
-	["@keyword"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+	["@keyword"] = { fg = c.purple, fmt = cfg.code_style.variables },
 	["@keyword.conditional"] = { fg = c.purple, fmt = cfg.code_style.keywords },
 	["@keyword.conditional.ternary"] = { fg = c.purple, fmt = cfg.code_style.keywords },
 	["@keyword.coroutine"] = { fg = c.purple, fmt = cfg.code_style.keywords },
@@ -214,7 +222,7 @@ hl.treesitter = {
 	["@keyword.directive.define"] = colors.Purple,
 	["@keyword.exception"] = colors.Purple,
 	["@keyword.function"] = { fg = c.purple, fmt = cfg.code_style.functions },
-	["@keyword.import"] = colors.Purple,
+	["@keyword.import"] = { fg = c.purple, fmt = cfg.code_style.variables },
 	["@keyword.modifier"] = { fg = c.purple, fmt = cfg.code_style.keywords },
 	["@keyword.operator"] = { fg = c.purple, fmt = cfg.code_style.keywords },
 	["@keyword.repeat"] = { fg = c.purple, fmt = cfg.code_style.keywords },
@@ -257,6 +265,7 @@ hl.treesitter = {
 
 	-- Operators
 	["@operator"] = colors.Fg,
+	["@operator.typescript"] = colors.Purple,
 
 	-- Properties
 	["@property"] = { fg = c.cyan, fmt = "none" },
@@ -264,7 +273,7 @@ hl.treesitter = {
 	-- Punctuation
 	["@punctuation.bracket"] = colors.LightGrey,
 	["@punctuation.delimiter"] = colors.LightGrey,
-	["@punctuation.special"] = colors.Red,
+	["@punctuation.special"] = colors.Grey,
 
 	-- Strings
 	["@string"] = { fg = c.green, fmt = cfg.code_style.strings },
@@ -289,6 +298,7 @@ hl.treesitter = {
 
 	-- Variables
 	["@variable"] = { fg = c.fg, fmt = cfg.code_style.variables },
+	["@variable.typescript"] = { fg = c.fg, fmt = "bold" },
 	["@variable.builtin"] = { fg = c.red, fmt = cfg.code_style.variables },
 	["@variable.member"] = { fg = c.cyan, fmt = "none" },
 	["@variable.parameter"] = colors.Red,
@@ -318,6 +328,7 @@ hl.lsp = {
 	["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
 	["@lsp.typemod.variable.static"] = hl.treesitter["@constant"],
 	-- tsx
+	["@lsp.type.variable.typescriptreact"] = { fg = c.fg, fmt = "none" },
 	["@lsp.type.function.typescriptreact"] = colors.Blue,
 	["@lsp.type.member.typescriptreact"] = colors.Blue,
 	["@lsp.mod.declaration.typescriptreact"] = { fg = c.fg, fmt = "none" },

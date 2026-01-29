@@ -47,7 +47,7 @@ end
 
 local default_config = {
 	-- Main options --
-	style = "dark", -- choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	style = "cool", -- choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 	toggle_style_key = nil,
 	toggle_style_list = M.styles_list,
 	transparent = false, -- don't set background
@@ -58,7 +58,7 @@ local default_config = {
 	-- Changing Formats --
 	code_style = {
 		comments = "italic",
-		keywords = "none",
+		keywords = "italic",
 		functions = "none",
 		strings = "none",
 		variables = "italic",
