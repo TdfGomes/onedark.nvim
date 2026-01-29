@@ -585,7 +585,7 @@ hl.plugins.nvim_tree = {
 	NvimTreeIndentMarker = colors.Fg,
 	NvimTreeImageFile = { fg = c.dark_purple },
 	NvimTreeSymlink = colors.Purple,
-	NvimTreeFolderName = colors.Blue,
+	NvimTreeFolderName = colors.Cyan,
 }
 
 hl.plugins.telescope = {
