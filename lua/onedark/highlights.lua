@@ -453,6 +453,11 @@ hl.plugins.barbar = {
 	BufferVisibleTarget = { fg = c.light_grey, bg = c.bg0 },
 }
 
+hl.plugins.lazy = {
+	LazyButton = { fg = c.bg_yellow },
+	LazyButtonActive = { fg = c.light_grey, bg = c.bg_yellow },
+}
+
 hl.plugins.cmp = {
 	CmpItemAbbr = colors.Fg,
 	CmpItemAbbrDeprecated = { fg = c.light_grey, fmt = "strikethrough" },
