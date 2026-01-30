@@ -151,6 +151,7 @@ hl.syntax = {
 	Todo = { fg = c.red, fmt = cfg.code_style.comments },
 	--html
 	htmlTag = colors.Red,
+	htmlTagName = colors.Red,
 	-- tsx
 	typescriptAssign = colors.Purple,
 	tsxEqual = colors.Purple,
