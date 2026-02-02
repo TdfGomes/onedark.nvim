@@ -170,7 +170,7 @@ hl.syntax = {
 	typescriptObjectLabel = colors.Cyan,
 	typescriptBOMWindowProp = { fg = c.red, fmt = cfg.code_style.variables },
 	typescriptDOMDocMethod = colors.Blue,
-	typescriptTemplateSB = { fg = c.grey, fmt = "bold" },
+	typescriptTemplateSB = { fg = c.fg, fmt = "bold" },
 	typescriptInterfaceName = colors.Orange,
 	typescriptArrayMethod = colors.Blue,
 	typescriptEndColons = { fg = c.grey, fmt = "bold" },
