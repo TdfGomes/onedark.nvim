@@ -157,7 +157,7 @@ hl.syntax = {
 	tsxEqual = colors.Purple,
 	typescriptBinaryOp = colors.Purple,
 	typescriptVariableDeclaration = colors.Blue,
-	typescriptTypeReference = { fg = c.yellow, fmt = "none" },
+	typescriptTypeReference = { fg = c.orange, fmt = "bold" },
 	typescriptArrowFunc = colors.Purple,
 	tsxCloseString = colors.Red,
 	tsxEscJs = colors.Orange,
@@ -376,6 +376,7 @@ hl.lsp = {
 	["@lsp.typemod.parameter.declaration.typescriptreact"] = colors.Red,
 	["@lsp.typemod.interface.declaration.typescriptreact"] = colors.Orange,
 	["@lsp.typemod.member.defaultLibrary.typescriptreact"] = colors.Blue,
+	["@lsp.typemod.type.defaultLibrary.typescriptreact"] = { fb = c.orange, fmt = "bold" },
 }
 
 local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
