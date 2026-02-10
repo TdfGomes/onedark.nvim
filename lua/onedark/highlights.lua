@@ -377,6 +377,7 @@ hl.lsp = {
 	["@lsp.typemod.interface.declaration.typescriptreact"] = colors.Orange,
 	["@lsp.typemod.member.defaultLibrary.typescriptreact"] = colors.Blue,
 	["@lsp.typemod.type.defaultLibrary.typescriptreact"] = { fb = c.orange, fmt = "bold" },
+	["@lsp.typemod.member.declaration.typescriptreact"] = colors.Blue,
 }
 
 local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
@@ -870,6 +871,10 @@ hl.plugins.illuminate = {
 	IlluminatedWordText = { bg = c.bg2, fmt = "bold" },
 	IlluminatedWordRead = { bg = c.bg2, fmt = "bold" },
 	IlluminatedWordWrite = { bg = c.bg2, fmt = "bold" },
+}
+
+hl.plugins.fugitive = {
+	fugitiveStop = colors.Red,
 }
 
 hl.langs.c = {
